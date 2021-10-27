@@ -6,6 +6,7 @@
     "start": "nx serve yadoms-cs",
     "build": "nx build",
     "test": "nx test",
+    "dep-graph": "nx dep-graph",
     "postinstall": "node node_modules/@nx-plus/vue/patch-nx-dep-graph.js"
   },
   "private": true,
