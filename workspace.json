@@ -1,6 +1,93 @@
 {
   "version": 2,
-  "projects": {},
+  "projects": {
+    "yadoms-cs": {
+      "projectType": "application",
+      "root": "apps/yadoms-cs",
+      "sourceRoot": "apps/yadoms-cs/src",
+      "targets": {
+        "build": {
+          "executor": "@nx-plus/vue:browser",
+          "options": {
+            "dest": "dist/apps/yadoms-cs",
+            "index": "apps/yadoms-cs/public/index.html",
+            "main": "apps/yadoms-cs/src/main.ts",
+            "tsConfig": "apps/yadoms-cs/tsconfig.app.json"
+          },
+          "configurations": {
+            "production": {
+              "mode": "production",
+              "filenameHashing": true,
+              "productionSourceMap": true,
+              "css": {
+                "extract": true,
+                "sourceMap": false
+              }
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nx-plus/vue:dev-server",
+          "options": {
+            "browserTarget": "yadoms-cs:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "yadoms-cs:build:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/yadoms-cs/**/*.{ts,tsx,vue}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/yadoms-cs"
+          ],
+          "options": {
+            "jestConfig": "apps/yadoms-cs/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "yadoms-cs-e2e": {
+      "root": "apps/yadoms-cs-e2e",
+      "sourceRoot": "apps/yadoms-cs-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/yadoms-cs-e2e/cypress.json",
+            "devServerTarget": "yadoms-cs:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "yadoms-cs:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": [
+            "{options.outputFile}"
+          ],
+          "options": {
+            "lintFilePatterns": [
+              "apps/yadoms-cs-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "defaultCollection": "@nrwl/workspace"
   }
