@@ -26,13 +26,7 @@
       }
     ]
   },
-  "projects": {
-    "yadoms-cs": {
-      "tags": []
-    },
-    "yadoms-cs-e2e": {
-      "tags": [],
-      "implicitDependencies": ["yadoms-cs"]
-    }
+  "cli": {
+    "defaultCollection": "@nrwl/workspace"
   }
 }

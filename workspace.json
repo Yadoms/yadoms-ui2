@@ -40,22 +40,19 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/yadoms-cs/**/*.{ts,tsx,vue}"
-            ]
+            "lintFilePatterns": ["apps/yadoms-cs/**/*.{ts,tsx,vue}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/yadoms-cs"
-          ],
+          "outputs": ["coverage/apps/yadoms-cs"],
           "options": {
             "jestConfig": "apps/yadoms-cs/jest.config.js",
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "yadoms-cs-e2e": {
       "root": "apps/yadoms-cs-e2e",
@@ -76,19 +73,14 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/yadoms-cs-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/yadoms-cs-e2e/**/*.{js,ts}"]
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": ["yadoms-cs"]
     }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/workspace"
   }
 }
