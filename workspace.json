@@ -1,6 +1,29 @@
 {
   "version": 2,
   "projects": {
+    "core--configurations": {
+      "root": "libs/core/configurations",
+      "sourceRoot": "libs/core/configurations/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/core/configurations/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/configurations"],
+          "options": {
+            "jestConfig": "libs/core/configurations/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
     "yadoms-cs": {
       "projectType": "application",
       "root": "apps/yadoms-cs",

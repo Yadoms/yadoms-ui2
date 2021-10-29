@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@yadoms-ui2/core//configurations": [
+        "libs/core/configurations/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
