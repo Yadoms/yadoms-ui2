@@ -5,7 +5,7 @@ import {ServerConfigurationModel} from '../domain/model/server-configuration.mod
 import {Observable, of, throwError} from 'rxjs';
 
 const ROOT_PATH = 'http://localhost:8081';
-const CONFIGURATION_SERVER_URL = `${ROOT_PATH}/rest/v2/configuration/server`;
+const CONFIGURATION_SERVER_URL = `${ROOT_PATH}/rest/v2/configurations/server`;
 
 describe(`Rest service`, () => {
 

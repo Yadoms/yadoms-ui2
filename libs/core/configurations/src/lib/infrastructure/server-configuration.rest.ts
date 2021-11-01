@@ -10,7 +10,8 @@ export class ServerConfigurationRest implements ServerConfiguration {
 
   retrieve(): Observable<ServerConfigurationModel> {
 
-    const url = this.generateUrl()
+    const url = this.generateUrl();
+
     return ajax.getJSON<ServerConfigurationModel>(url)
       .pipe(
         map(response => response),
@@ -19,6 +20,6 @@ export class ServerConfigurationRest implements ServerConfiguration {
   }
 
   private generateUrl() {
-    return `${this.rootPath}/rest/v2/configuration/server`;
+    return `${this.rootPath}/rest/v2/configurations/server`;
   }
 }

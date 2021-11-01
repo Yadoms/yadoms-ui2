@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@yadoms-ui2/core//configurations": [
+      "@yadoms-ui2/angular-infrastructure/configuration": [
+        "libs/angular-infrastructure/configuration/src/index.ts"
+      ],
+      "@yadoms-ui2/core/configurations": [
         "libs/core/configurations/src/index.ts"
       ],
       "@yadoms-ui2/vuejs-infrastructure/configurations/server-configuration": [

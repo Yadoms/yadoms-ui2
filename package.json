@@ -4,13 +4,21 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve yadoms-cs",
+    "start-angular": "nx serve yadoms-cs-angular",
     "build": "nx build",
     "test": "nx test",
     "dep-graph": "nx dep-graph",
-    "postinstall": "node node_modules/@nx-plus/vue/patch-nx-dep-graph.js"
+    "postinstall": "node node_modules/@nx-plus/vue/patch-nx-dep-graph.js && ngcc --properties es2015 browser module main"
   },
   "private": true,
   "devDependencies": {
+    "@angular-devkit/build-angular": "~12.2.0",
+    "@angular-eslint/eslint-plugin": "~12.3.0",
+    "@angular-eslint/eslint-plugin-template": "~12.3.0",
+    "@angular-eslint/template-parser": "~12.3.0",
+    "@angular/compiler-cli": "^12.2.0",
+    "@angular/language-service": "^12.2.0",
+    "@nrwl/angular": "^13.1.2",
     "@nrwl/cli": "13.1.2",
     "@nrwl/cypress": "13.1.2",
     "@nrwl/eslint-plugin-nx": "13.1.2",
@@ -36,6 +44,7 @@
     "eslint-plugin-cypress": "^2.10.3",
     "eslint-plugin-vue": "^7.8.0",
     "jest": "26.2.2",
+    "jest-preset-angular": "10.0.1",
     "jest-serializer-vue": "^2.0.2",
     "jest-transform-stub": "^2.0.0",
     "prettier": "^2.3.1",
@@ -44,9 +53,18 @@
     "vue3-jest": "^27.0.0-alpha.1"
   },
   "dependencies": {
+    "@angular/animations": "^12.2.0",
+    "@angular/common": "^12.2.0",
+    "@angular/compiler": "^12.2.0",
+    "@angular/core": "^12.2.0",
+    "@angular/forms": "^12.2.0",
+    "@angular/platform-browser": "^12.2.0",
+    "@angular/platform-browser-dynamic": "^12.2.0",
+    "@angular/router": "^12.2.0",
     "core-js": "^3.6.5",
     "rxjs": "^7.4.0",
     "tslib": "^2.0.0",
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "zone.js": "~0.11.4"
   }
 }
