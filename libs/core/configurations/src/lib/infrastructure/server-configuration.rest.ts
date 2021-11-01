@@ -5,6 +5,9 @@ import {ajax} from 'rxjs/ajax';
 
 export class ServerConfigurationRest implements ServerConfiguration {
 
+  constructor(private rootPath: string) {
+  }
+
   retrieve(): Observable<ServerConfigurationModel> {
 
     const url = this.generateUrl()
@@ -16,6 +19,6 @@ export class ServerConfigurationRest implements ServerConfiguration {
   }
 
   private generateUrl() {
-    return '/rest/v2/configuration/server';
+    return `${this.rootPath}/rest/v2/configuration/server`;
   }
 }

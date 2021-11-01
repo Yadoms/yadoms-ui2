@@ -2,7 +2,7 @@ import {ServerConfiguration} from '../domain/port/server-configuration.port';
 import {Observable} from 'rxjs';
 import {ServerConfigurationModel} from '../domain/model/server-configuration.model';
 
-export class ServerConfigurationUsecase {
+export class GetServerConfigurationUsecase {
 
   constructor(private server: ServerConfiguration) {
   }
