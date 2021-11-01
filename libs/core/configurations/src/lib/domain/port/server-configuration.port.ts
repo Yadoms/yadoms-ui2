@@ -1,5 +1,6 @@
 import {Observable} from 'rxjs';
+import {ServerConfigurationModel} from '../model/server-configuration.model';
 
 export interface ServerConfiguration {
-  retrieves(): Observable<ServerConfiguration>;
+  retrieve(): Observable<ServerConfigurationModel>;
 }

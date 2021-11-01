@@ -1,4 +1,4 @@
-export interface ServerConfiguration {
+export interface ServerConfigurationModel {
   firstStart: boolean,
   location: {
     status: string,
