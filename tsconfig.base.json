@@ -17,6 +17,9 @@
     "paths": {
       "@yadoms-ui2/core//configurations": [
         "libs/core/configurations/src/index.ts"
+      ],
+      "@yadoms-ui2/vuejs-infrastructure/configurations/server-configuration": [
+        "libs/vuejs-infrastructure/configurations/server-configuration/src/index.ts"
       ]
     }
   },

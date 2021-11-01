@@ -8,20 +8,52 @@
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
-            "lintFilePatterns": ["libs/core/configurations/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/core/configurations/**/*.ts"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core/configurations"],
+          "outputs": [
+            "coverage/libs/core/configurations"
+          ],
           "options": {
             "jestConfig": "libs/core/configurations/jest.config.js",
             "passWithNoTests": true
           }
         }
       },
+      "tags": []
+    },
+    "vuejs-infrastructure-configurations-server-configuration": {
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/vuejs-infrastructure/configurations/server-configuration/**/*.{ts,tsx,vue}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/vuejs-infrastructure/configurations/server-configuration"
+          ],
+          "options": {
+            "jestConfig": "libs/vuejs-infrastructure/configurations/server-configuration/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "root": "libs/vuejs-infrastructure/configurations/server-configuration",
+      "sourceRoot": "libs/vuejs-infrastructure/configurations/server-configuration/src",
       "tags": []
     },
     "yadoms-cs": {
@@ -63,12 +95,16 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/yadoms-cs/**/*.{ts,tsx,vue}"]
+            "lintFilePatterns": [
+              "apps/yadoms-cs/**/*.{ts,tsx,vue}"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/yadoms-cs"],
+          "outputs": [
+            "coverage/apps/yadoms-cs"
+          ],
           "options": {
             "jestConfig": "apps/yadoms-cs/jest.config.js",
             "passWithNoTests": true
@@ -96,14 +132,20 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
-            "lintFilePatterns": ["apps/yadoms-cs-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/yadoms-cs-e2e/**/*.{js,ts}"
+            ]
           }
         }
       },
       "tags": [],
-      "implicitDependencies": ["yadoms-cs"]
+      "implicitDependencies": [
+        "yadoms-cs"
+      ]
     }
   }
 }
