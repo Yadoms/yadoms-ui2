@@ -9,12 +9,15 @@ import {GetServerConfigurationUsecase} from '@yadoms-ui2/core/configurations';
 })
 export class ServerConfigurationComponent implements OnInit {
 
+  serverConfigurationView = {};
+
   constructor(@Inject(GET_SERVER_CONFIGURATION)
-              private serverConfiguration: GetServerConfigurationUsecase) { }
+              private serverConfigurationService: GetServerConfigurationUsecase) {
+  }
 
   ngOnInit(): void {
-    this.serverConfiguration.retrieve().subscribe((sc) => {
-      console.log(sc);
+    this.serverConfigurationService.retrieve().subscribe((sc) => {
+      this.serverConfigurationView = sc;
     })
   }
 

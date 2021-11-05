@@ -1,6 +1,6 @@
 import {InjectionToken} from '@angular/core';
 import {GetServerConfigurationUsecase, ServerConfigurationRest} from '@yadoms-ui2/core/configurations';
-import {ConfigurationEnvironment} from '@yadoms-ui2/angular-infrastructure/configuration';
+import {ConfigurationEnvironment} from '../configuration.module';
 
 export const GET_SERVER_CONFIGURATION = new InjectionToken<GetServerConfigurationUsecase>('GET_SERVER_CONFIGURATION');
 
