@@ -1,5 +1,5 @@
 {
-  "npmScope": "yadoms-ui2",
+  "npmScope": "yadoms",
   "affected": {
     "defaultBase": "master"
   },
@@ -26,23 +26,13 @@
       }
     ]
   },
-  "cli": {
-    "defaultCollection": "@nrwl/angular"
-  },
-  "generators": {
-    "@nrwl/angular:application": {
-      "style": "css",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
+  "projects": {
+    "yadoms": {
+      "tags": []
     },
-    "@nrwl/angular:library": {
-      "style": "css",
-      "linter": "eslint",
-      "unitTestRunner": "jest"
-    },
-    "@nrwl/angular:component": {
-      "style": "css"
+    "yadoms-e2e": {
+      "tags": [],
+      "implicitDependencies": ["yadoms"]
     }
   }
 }
