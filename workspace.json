@@ -50,85 +50,6 @@
       },
       "tags": []
     },
-    "vuejs-infrastructure-configurations-server-configuration": {
-      "projectType": "library",
-      "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/vuejs-infrastructure/configurations/server-configuration/**/*.{ts,tsx,vue}"
-            ]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/vuejs-infrastructure/configurations/server-configuration"
-          ],
-          "options": {
-            "jestConfig": "libs/vuejs-infrastructure/configurations/server-configuration/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "root": "libs/vuejs-infrastructure/configurations/server-configuration",
-      "sourceRoot": "libs/vuejs-infrastructure/configurations/server-configuration/src",
-      "tags": []
-    },
-    "yadoms-cs": {
-      "projectType": "application",
-      "root": "apps/yadoms-cs",
-      "sourceRoot": "apps/yadoms-cs/src",
-      "targets": {
-        "build": {
-          "executor": "@nx-plus/vue:browser",
-          "options": {
-            "dest": "dist/apps/yadoms-cs",
-            "index": "apps/yadoms-cs/public/index.html",
-            "main": "apps/yadoms-cs/src/main.ts",
-            "tsConfig": "apps/yadoms-cs/tsconfig.app.json"
-          },
-          "configurations": {
-            "production": {
-              "mode": "production",
-              "filenameHashing": true,
-              "productionSourceMap": true,
-              "css": {
-                "extract": true,
-                "sourceMap": false
-              }
-            }
-          }
-        },
-        "serve": {
-          "executor": "@nx-plus/vue:dev-server",
-          "options": {
-            "browserTarget": "yadoms-cs:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "yadoms-cs:build:production"
-            }
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["apps/yadoms-cs/**/*.{ts,tsx,vue}"]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/yadoms-cs"],
-          "options": {
-            "jestConfig": "apps/yadoms-cs/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "tags": []
-    },
     "yadoms-cs-angular": {
       "projectType": "application",
       "root": "apps/yadoms-cs-angular",
@@ -249,34 +170,6 @@
       },
       "tags": [],
       "implicitDependencies": ["yadoms-cs-angular"]
-    },
-    "yadoms-cs-e2e": {
-      "root": "apps/yadoms-cs-e2e",
-      "sourceRoot": "apps/yadoms-cs-e2e/src",
-      "projectType": "application",
-      "targets": {
-        "e2e": {
-          "executor": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/yadoms-cs-e2e/cypress.json",
-            "devServerTarget": "yadoms-cs:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "yadoms-cs:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
-          "options": {
-            "lintFilePatterns": ["apps/yadoms-cs-e2e/**/*.{js,ts}"]
-          }
-        }
-      },
-      "tags": [],
-      "implicitDependencies": ["yadoms-cs"]
     }
   }
 }
