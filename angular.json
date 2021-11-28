@@ -2,26 +2,23 @@
   "version": 1,
   "projects": {
     "core-configurations": {
-      "projectType": "library",
       "root": "libs/core/configurations",
       "sourceRoot": "libs/core/configurations/src",
-      "prefix": "yadoms",
+      "projectType": "library",
       "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/core/configurations/**/*.ts"]
+          }
+        },
         "test": {
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/core/configurations"],
           "options": {
             "jestConfig": "libs/core/configurations/jest.config.js",
             "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/core/configurations/src/**/*.ts",
-              "libs/core/configurations/src/**/*.html"
-            ]
           }
         }
       }

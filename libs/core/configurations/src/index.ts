@@ -1,1 +1,1 @@
-export * from './lib/core-configurations.module';
+export * from './lib/core-configurations';
