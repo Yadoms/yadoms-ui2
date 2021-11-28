@@ -27,6 +27,9 @@
     ]
   },
   "projects": {
+    "angular-infrastructure-configurations": {
+      "tags": []
+    },
     "core-configurations": {
       "tags": []
     },

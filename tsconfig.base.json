@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@yadoms/angular-infrastructure/configurations": [
+        "libs/angular-infrastructure/configurations/src/index.ts"
+      ],
       "@yadoms/core/configurations": ["libs/core/configurations/src/index.ts"]
     }
   },

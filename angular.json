@@ -1,6 +1,31 @@
 {
   "version": 1,
   "projects": {
+    "angular-infrastructure-configurations": {
+      "projectType": "library",
+      "root": "libs/angular-infrastructure/configurations",
+      "sourceRoot": "libs/angular-infrastructure/configurations/src",
+      "prefix": "yadoms",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/angular-infrastructure/configurations"],
+          "options": {
+            "jestConfig": "libs/angular-infrastructure/configurations/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/angular-infrastructure/configurations/src/**/*.ts",
+              "libs/angular-infrastructure/configurations/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "core-configurations": {
       "root": "libs/core/configurations",
       "sourceRoot": "libs/core/configurations/src",
