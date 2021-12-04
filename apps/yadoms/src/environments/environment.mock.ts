@@ -1,5 +1,5 @@
 export const environment = {
-  production: true,
+  production: false,
   rootPath: 'http://localhost:8081',
-  getServerConfiguration: 'REST_CALL'
+  getServerConfiguration: 'MOCK_CALL'
 };

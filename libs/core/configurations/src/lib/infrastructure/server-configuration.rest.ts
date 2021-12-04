@@ -6,14 +6,21 @@ import {catchError, map} from 'rxjs/operators';
 
 export class ServerConfigurationRest implements ServerConfiguration {
 
-  constructor(private getServerConfigurationPath: string) {
+  constructor(private rootPath: string) {
   }
 
   retrieve(): Observable<ServerConfigurationModel> {
-    return ajax.getJSON<ServerConfigurationModel>(this.getServerConfigurationPath)
+
+    const url = this.generateUrl();
+    
+    return ajax.getJSON<ServerConfigurationModel>(url)
       .pipe(
         map(response => response),
         catchError(error => throwError(error))
       );
+  }
+
+  private generateUrl() {
+    return `${this.rootPath}/rest/v2/configurations/server`;
   }
 }

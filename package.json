@@ -8,7 +8,7 @@
     "start": "nx serve yadoms",
     "build": "nx build",
     "test": "nx test",
-    "all-test": "nx run-many --target=test --all",
+    "test-all": "nx run-many --target=test --all",
     "test-only-failed": "nx run-many --target=test -all --only-failed"
   },
   "private": true,
