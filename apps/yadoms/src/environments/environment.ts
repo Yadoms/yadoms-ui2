@@ -2,9 +2,11 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+const ROOT_PATH = 'http://localhost:8081';
+
 export const environment = {
   production: false,
-  getServerRootPath: 'http://localhost:8081'
+  getServerConfiguration: `${ROOT_PATH}/rest/v2/configurations/server`
 };
 
 /*

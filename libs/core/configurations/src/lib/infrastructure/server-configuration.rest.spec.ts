@@ -31,7 +31,7 @@ describe(`Rest service`, () => {
 
   it(`should trigger an error when server is down`, (done) => {
     const expectedErrorMessage = 'server is down';
-    spyOnAjaxServerAndReturnMockedData(throwError(() => 'server is down'));
+    spyOnAjaxServerAndReturnMockedData(throwError('server is down'));
     retrieveServerConfiguration().subscribe({
       error: (actualErrorMessage) => {
         expect(actualErrorMessage).toEqual(expectedErrorMessage);
@@ -51,7 +51,7 @@ describe(`Rest service`, () => {
   });
 
   function retrieveServerConfiguration() {
-    return new ServerConfigurationRest(ROOT_PATH).retrieve();
+    return new ServerConfigurationRest(CONFIGURATION_SERVER_URL).retrieve();
   }
 
   function spyOnAjaxServerAndReturnMockedData(mockedResponse$: Observable<ServerConfigurationModel>) {

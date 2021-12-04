@@ -6,10 +6,10 @@ export const GET_SERVER_CONFIGURATION = new InjectionToken<GetServerConfiguratio
 
 export class GetServerConfigurationFactory {
   static buildGetServerConfiguration(environnement: ConfigurationEnvironment) {
-    return this.restConfiguration(environnement.getServerRootPath);
+    return this.restConfiguration(environnement.getServerConfigurationPath);
   }
 
-  private static restConfiguration(serverRootPath: string) {
-    return new GetServerConfigurationUsecase(new ServerConfigurationRest(serverRootPath))
+  private static restConfiguration(serverConfigurationPath: string) {
+    return new GetServerConfigurationUsecase(new ServerConfigurationRest(serverConfigurationPath))
   }
 }
