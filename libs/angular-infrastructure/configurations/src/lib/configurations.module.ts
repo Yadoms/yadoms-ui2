@@ -7,7 +7,8 @@ import {
 } from './dependencies-injection/get-server-configuration.factory';
 
 export interface ConfigurationEnvironment {
-  getServerConfigurationPath: string;
+  rootPath: string,
+  getServerConfiguration: string;
 }
 
 @NgModule({

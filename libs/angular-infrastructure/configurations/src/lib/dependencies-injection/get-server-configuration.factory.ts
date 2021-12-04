@@ -6,7 +6,7 @@ export const GET_SERVER_CONFIGURATION = new InjectionToken<GetServerConfiguratio
 
 export class GetServerConfigurationFactory {
   static buildGetServerConfiguration(environnement: ConfigurationEnvironment) {
-    return this.restConfiguration(environnement.getServerConfigurationPath);
+    return this.restConfiguration(environnement.rootPath);
   }
 
   private static restConfiguration(serverConfigurationPath: string) {
