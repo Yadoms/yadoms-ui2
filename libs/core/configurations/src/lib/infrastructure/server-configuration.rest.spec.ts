@@ -51,7 +51,7 @@ describe(`Rest service`, () => {
   });
 
   function retrieveServerConfiguration() {
-    return new ServerConfigurationRest(CONFIGURATION_SERVER_URL).retrieve();
+    return new ServerConfigurationRest(ROOT_PATH).retrieve();
   }
 
   function spyOnAjaxServerAndReturnMockedData(mockedResponse$: Observable<ServerConfigurationModel>) {

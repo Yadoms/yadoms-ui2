@@ -9,7 +9,7 @@
     "build": "nx build",
     "test": "nx test",
     "test-all": "nx run-many --target=test --all",
-    "test-only-failed": "nx run-many --target=test -all --only-failed"
+    "test-only-failed": "nx run-many --target=test --all --only-failed"
   },
   "private": true,
   "dependencies": {
